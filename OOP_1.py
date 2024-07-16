@@ -23,10 +23,14 @@ class Mentor:
             return 'Ошибка'
 
 class Lecturer(Mentor):
-    pass
+    def __init__(self, name, surname, grade_hs):
+        super().__init__(name, surname)
+        self.grade = grade_hs
 
 class Reviewer(Mentor):
-    pass
+    def __init__(self, name, surname, grade_hw):
+        super().__init__(name, surname)
+        self.grade = grade_hw
 
 
 
