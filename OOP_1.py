@@ -27,6 +27,15 @@ class Lecturer(Mentor):
         super().__init__(name, surname)
         self.grade = {}
 
+    def __average_grade(self): 
+        grades_count = 0 
+        for grade in self.grades:
+            grades_count += len(self.grades[grade]) 
+            average_l = sum(map(sum, self.grades)) / grades_count 
+            return average_l    
+    def __str__(self):
+        return (f'Имя: {self.name}\nФамилия: {self.surname}\nСредняя оценка за лекции: {self.__average_grade()}')
+
 class Reviewer(Mentor):
     def __init__(self, name, surname):
         super().__init__(name, surname)
